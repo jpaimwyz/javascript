@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desafios-styles.css">
+    <title>Situação do aluno</title>
+    <style>
+        strong.aprovado{
+            color: rgba(0, 128, 0, 0.656);
+        }
+        strong.reprovado{
+            color: rgba(255, 0, 0, 0.634);
+        }
+        strong.recupe{
+           color: rgba(182, 167, 2, 0.634);
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="analisarSituaçãoEscolar()">Entrar com as notas</button>
+    <section class="resultado">
+        <p>Clique no botão acima para informar as notas do aluno</p>
+    </section>
+    <p>Desafio completo (Não totalmente)!</p>
+    <p>04.12.2022 - Mudei as cores com classes, não foi por js, mas acredito que vale.</p>
+
+    <script>
+        function analisarSituaçãoEscolar(){
+            let nomeDoAluno = prompt('Qual é o nome do aluno?')
+            let primeiraNota = Number(prompt(`Primeira nota de ${nomeDoAluno}:`))
+            let segundaNota = Number(prompt(`Segunda nota de ${nomeDoAluno}:`))
+            let média = (primeiraNota + segundaNota) / 2
+            let resultado = document.querySelector('section.resultado')
+            resultado.innerHTML = `<h1>Analisando a situação de ${nomeDoAluno}</h1>
+            `
+            resultado.innerHTML += `<p>Com as notas ${primeiraNota.toLocaleString()} e ${segundaNota.toLocaleString()} valores, a <strong>média é de ${média.toLocaleString()}</strong> valores.</p>`
+
+            if(média < 4){
+                resultado.innerHTML += `<p>Com média abaixo de 3, o aluno está <strong class = 'reprovado'>REPROVADO!</strong></p>`
+            } else if(média <= 9){
+                resultado.innerHTML += `<p>Com média entre 4 e 9, o aluno está <strong class = 'recupe'>RECUPERAÇÃO!</strong></p>`
+            } else {
+                resultado.innerHTML += `<p>Com média acima de 10, o aluno está <strong class = 'aprovado'>APROVADO!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

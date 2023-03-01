@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desafios-styles.css">
+    <title>Preço Mudou</title>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="avaliarPreço()">Verificar</button>
+    <section class="resultado">
+        <p>Clique no botão acima para avaliar a mudança de preço.</p>
+    </section>
+    <p>Desafio Completo!</p>
+
+    <script>
+        function avaliarPreço(){
+            const padrão = {style: 'currency', currency: 'EUR'}
+            let preçoAnterior = Number(prompt('Qual era o preço anterior do produto?'))
+            let preçoAtual = Number(prompt('Qual era o preço anterior do produto?'))
+            let mudançaDePreço 
+            let variaçãoPercentual = ((preçoAtual - preçoAnterior) / preçoAnterior) * 100
+            let resultado = document.querySelector('section.resultado')
+
+            resultado.innerHTML = '<h2>Analisando os valores informados</h2>'
+            resultado.innerHTML += `<p>O produto custava ${preçoAnterior.toLocaleString('pt-pt', padrão)} e agora custa ${preçoAtual.toLocaleString('pt-pt', padrão)}.</p>` 
+
+            if (preçoAnterior < preçoAtual){
+                resultado.innerHTML += '<p>Hoje o produto está mais caro.</p>'
+                mudançaDePreço = preçoAtual - preçoAnterior
+                resultado.innerHTML += `<p>O preço subiu ${mudançaDePreço.toLocaleString('pt-pt', padrão)} em relação ao preço anterior.</p>`
+                resultado.innerHTML += `<p>Uma variação de ${variaçãoPercentual.toLocaleString()}% para cima.</p>`
+            } else if(preçoAnterior > preçoAtual){
+                resultado.innerHTML += '<p>Hoje o produto está mais barato.</p>'
+                mudançaDePreço = preçoAnterior - preçoAtual
+                resultado.innerHTML += `<p>O preço caiu ${mudançaDePreço.toLocaleString('pt-pt', padrão)} em relação ao preço anterior.</p>`
+                resultado.innerHTML += `<p>Uma variação de ${Math.abs(variaçãoPercentual).toLocaleString()}% para baixo.</p>`
+            } else{
+                resultado.innerHTML += '<p>Hoje o produto mantém o seu preço.</p>'
+              
+            }
+
+        }
+    </script>
+</body>
+</html>

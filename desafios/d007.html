@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ &#x2192; US$</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+</head>
+<body>
+    <h1>Conversor R$ &#x2192; US$</h1>
+    <button onclick="converter()">Converter</button>
+    <section class="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <p>Desafio Completo!</p>
+    <script>
+        let cotacao = Number(prompt('Antes de mais nada. Quanto está a cotação do dolár agora?'))
+        function converter(){
+            const Reais = {
+                style: 'currency', 
+                currency:'BRL'
+            }
+            const Dolares = {
+                style: 'currency', 
+                currency:'USD'
+            }
+            let valorEmReais = Number(prompt('Quantos R\u0024 você tem na carteira?'))
+            let valorEmDolares = valorEmReais / cotacao
+            let res = document.querySelector('section.res')
+            res.innerHTML = `<p>Com <mark>${valorEmReais.toLocaleString('pt-br', Reais)}</mark> na carteira, você pode comprar <mark>${valorEmDolares.toLocaleString('pt-br', Dolares)}</mark></p>`
+        }
+    </script>
+</body>
+</html>

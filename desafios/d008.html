@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="desconto()">Desconto de 10%</button>
+    <section class="res">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+    <p>Desafio Completo!</p>
+    
+    <script>
+         const Reais = {
+            style: 'currency', 
+            currency:'BRL'
+        }
+         const porc = 10
+
+        function desconto(){
+            let produto = prompt('Qual é o produto que você está comprando?')
+            let precoProduto = Number(prompt('Qual é o preço de ' + produto + '?'))
+            let desconto = (precoProduto*porc)/100
+            let precoDescontado = precoProduto - desconto
+            let res = document.querySelector('section.res')
+            res.innerHTML = `<h2>Calculando desconto de 10% para ${produto}.</h2>`
+            res.innerHTML += `<p>O preço original era de ${precoProduto.toLocaleString('pt-br', Reais)}.</p>`
+            res.innerHTML += `<p>Você acaba de ganhar ${desconto.toLocaleString('pt-br', Reais)} de desconto (-10%).</p>`
+            res.innerHTML += `<p>No fim, você vai pagar ${precoDescontado.toLocaleString('pt-br', Reais)} no produto ${produto}.</p>`
+
+        }
+    </script>
+</body>
+</html>

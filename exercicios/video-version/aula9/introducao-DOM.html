@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Introdução ao DOM</title>
+    <style>
+        body{
+            background: rgb(68, 125, 199);
+            color: white;
+            font: normal 1.3em Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai  o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+        /* window.document.writeln('Olá, Mundo! <br>')
+        Para escrever na tela, não é a melhor forma, mas é a simples */
+        var p1 = document.getElementsByTagName('p')[0]
+        /* var d = document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aqui.' 
+         window.document.getElementById('msg').innerText = 'Estou aqui.' 
+         */ 
+        var d = document.querySelector('div#msg')
+        d.style.background = 'yellow'
+    </script>
+</body>
+</html>

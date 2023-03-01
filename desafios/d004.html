@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Troco</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+</head>
+<body>
+    <h1>Calcular Troco</h1>
+    <button onclick="comprarProdutoEMostrarTroco()">Comprar Produto</button>
+    <p>Desafio completo! (Consegui fazer mais do que só o troco!)</p>
+
+    <script>
+        function comprarProdutoEMostrarTroco(){
+            let item = prompt('Que produto você está comprando?')
+            let custo_item = Number(prompt(`Quanto custa ${item} que você está comprando?`))
+            let valor_pago = Number(prompt(`Qual foi o valor que deu para pagar ${item}?`))
+
+            let troco = (valor_pago - custo_item)
+            let deve = 0
+            alert(`Você comprou ${item} que custou ${custo_item.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}. \nDeu ${valor_pago.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} em dinheiro e ${deve = troco<0? 'você deve ' + (troco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})): 'vai receber ' + troco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) + ' de troco!'} \nVolte Sempre.`)
+        }
+    </script>
+</body>
+</html>

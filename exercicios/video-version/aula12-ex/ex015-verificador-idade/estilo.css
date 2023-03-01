@@ -1,0 +1,34 @@
+/* Estilos do Modelo */
+body{
+    background-color: rgb(70, 142, 190);
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    color: white;
+    text-align: center;
+}
+section{
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    padding: 15px;
+    margin: auto;
+    width: 500px;
+    box-shadow: 5px 5px 10px rgba(32, 32, 32, 0.342);
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+/*Estilos do Exercício*/
+input[type="button"]{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 9px rgba(32, 32, 32, 0.342);
+    cursor: pointer;
+}
+p input[type="button"]:active{
+    background-color: rgb(11, 43, 65);
+    color: #f6f6f6;
+}

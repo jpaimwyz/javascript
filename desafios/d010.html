@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+    <style>
+        span{
+            font-style: italic;
+        }
+        sup.ht{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="bhaskara()">Calcular</button>
+    <section class="res">
+        <p>Considerando uma equação no formato <span><strong>ax<sup class="ht">2</sup> + bx + c</strong> = 0</span>, aperte o botão acima para calcular o valor de &#x0394;.</p>
+    </section>
+    <p>Desafio Completo!</p>
+
+    <script>
+        function bhaskara(){
+            let a = Number(prompt('Qual é o valor de a?'))
+            let b = Number(prompt('Qual é o valor de b?'))
+            let c = Number(prompt('Qual é o valor de c?'))
+            let delta = b**2-4*a*c
+
+            let res = document.querySelector('section.res')
+            res.innerHTML = `<h2>Resolvendo Bhaskara</h2>`
+            res.innerHTML += `<p>A equação atual é <strong>${a}x<sup>2</sup> + ${b}x + ${c} = 0</strong></p>`
+            res.innerHTML += `O cálculo realizado será <strong>\u0394 = ${b}<sup>2</sup> - 4 . ${a} . ${c}</strong></p>`
+            res.innerHTML += `<p>O valor calculado foi <strong><mark>\u0394 = ${delta}</mark></strong></p>`
+
+        }
+    </script>
+</body>
+</html>

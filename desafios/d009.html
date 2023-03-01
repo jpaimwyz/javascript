@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="reajusteSalarial()">Reajustar Salário</button>
+    <section class="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </section> 
+    <p>Desafio Completo!</p>
+
+    <script>
+         const reais = {style: 'currency', currency:'BRL'}
+
+        function reajusteSalarial(){
+        let nomeFuncionário = prompt('Qual é o nome do funcionário?')
+        let salário = Number(prompt(`Qual é o salário de ${nomeFuncionário}?`))
+        let porc = Number(prompt(`O salário de ${nomeFuncionário} vai ser reajustado para qual percentagem?`))
+        let reajuste = (salário*porc)/100
+        let salárioReajustado = salário + reajuste
+
+        let res = document.querySelector('section.res')
+        res.innerHTML = `<h2>${nomeFuncionário} recebeu um aumento salarial!</h2>`
+        res.innerHTML += `<p>O salário atual era de ${salário.toLocaleString('pt-br', reais)}.</p>`
+        res.innerHTML += `<p>Com um aumento de ${porc}%, o salário vai aumentar ${reajuste.toLocaleString('pt-br', reais)} no próximo mês.</p>`
+        res.innerHTML += `<p>E a partir daí, ${nomeFuncionário} vai passar a ganhar ${salárioReajustado.toLocaleString('pt-br', reais)}.</p>`
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números em JS</title>
+    <style>
+        body{font-family:  Arial, Helvetica, sans-serif;}
+        button{padding: 20px; font-size: 1.1em;}
+    </style>
+</head>
+<body>
+    <h1>Vários Cálculos em JS</h1>
+    <button onclick="varioscalculos()">Clique para calcular</button>
+    <section class="resultado">
+        <p>Aqui vai o resultado...</p>
+    </section>
+
+    <script>
+        function varioscalculos(){
+            let num = Number(prompt('Digite um número'))
+    
+            let resultado = document.querySelector('section.resultado')
+            resultado.innerHTML = `<p>O número apresentado é: ${num}.</p><hr>`
+            resultado.innerHTML += `<p>O seu valor absoluto é: ${Math.abs(num)}.</p>`
+            resultado.innerHTML += `<p>A  sua parte inteira é: ${Math.trunc(num)}.</p>`
+            resultado.innerHTML += `<p>O seu valor inteiro mais próximo é: ${Math.round(num)}.</p>`
+            resultado.innerHTML += `<p>A sua raiz quadrada é: ${Math.sqrt(num)}.</p>`
+            resultado.innerHTML += `<p>A raiz cúbica é: ${Math.cbrt(num)}.</p>`
+            resultado.innerHTML += `<p>A potência quadrada de ${num}<sup>2</sup> é: ${num**2}.</p>`
+            resultado.innerHTML += `<p>A potência cúbica de ${num}<sup>3</sup> é: ${num**3}.</p>`
+        }
+    </script>
+</body>
+</html>

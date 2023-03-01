@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="converter()">Converter</button>
+    <section class="res">
+        <p>Clique no botão para iniciar conversão.</p>
+    </section>
+
+    <p>Desafio completo!</p>
+    <script>
+        function converter(){
+            const padrao_br = {
+                style: "decimal", maximumFractionDigits: 3
+            }
+            let distancia = Number(prompt('Digite uma distância em metros (m)'))
+            let res = document.querySelector('section.res')
+            res.innerHTML = `<h2>A distância de ${distancia.toLocaleString("pt-br", padrao_br)} corresponde a... </h2>`
+            res.innerHTML += `<p>${(distancia/10**3).toLocaleString("pt-br", padrao_br)} quilômetros (Km)</p>`
+            res.innerHTML += `<p>${(distancia/10**2).toLocaleString("pt-br", padrao_br)} hectômetros (Hm)</p>`
+            res.innerHTML += `<p>${(distancia/10).toLocaleString("pt-br", padrao_br)} decâmetros (Dam)</p>`
+            res.innerHTML += `<p>${(distancia*10).toLocaleString("pt-br", padrao_br)} decímetros (dm)</p>`
+            res.innerHTML += `<p>${(distancia*10**2).toLocaleString("pt-br", padrao_br)} decímetros (dm)</p>`
+            res.innerHTML += `<p>${(distancia*10**3).toLocaleString("pt-br", padrao_br)} decímetros (cm)</p>`
+
+        }
+    </script>
+</body>
+</html>

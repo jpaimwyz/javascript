@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desafios-styles.css">
+    <title>Ano Bissexto</title>
+    <style>
+        mark.verde{
+            background-color: rgba(0, 128, 0, 0.656);
+        }
+        mark.vermelho{
+            background-color: rgba(255, 0, 0, 0.634);
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="verificarAno()">Verificar</button>
+    <section class="resultado">
+        <p>Informe um ano a saber se ele é bissexto.</p>
+    </section>
+    <p>Não consegui completar totalmente! Faltou mudar a cor do elemento &lt;mark&gt; com javascript.</p>
+    <p>04.12.2022 - Consegui mudar as cores usando classes.</p>
+
+    <!-- Condições para ser ano bissexto
+        - ser inteiramente divisivel por 4 (ou seja, tem de ter resto 0)
+        - não pode ser divisivel por 100 ()   
+        - deve ser divisivel por 400 tambem, se for divisivel por 100 
+
+        RUIM - U+274C
+        BOM -  U+2705
+    -->
+
+    <script>
+        function verificarAno(){
+            let ano = Number(prompt('Qual é o ano que você quer analisar?'))
+            let resultado = document.querySelector('section.resultado')
+            resultado.innerHTML = `<h2>Analisando o ano de ${ano}...</h2>`
+            let emoji
+            
+            if (ano%4 == 0 && ano%100 !=0 || ano%400 == 0){
+                resultado.innerHTML += `<p>O ano de ${ano} <mark class = 'verde'><strong>É BISSEXTO!</strong></mark> ${emoji = String.fromCodePoint(0x2705)}.</p>`
+                
+            } else{
+                resultado.innerHTML += `<p>O ano de ${ano} <mark class = 'vermelho'><strong>NÃO É BISSEXTO!</strong></mark> ${emoji = String.fromCodePoint(0x274C)}</p>`
+            }
+        }
+    </script>
+</body>
+</html>

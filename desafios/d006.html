@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <link rel="stylesheet" href="desafios-styles.css">
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="converter()">Converter</button>
+    <section class="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <p>Desafio Completo!</p>
+    <!-- 
+        Fórmulas das temperaturas.
+        Celsius para Kelvin -> K = C + 273
+        Celsius para Fahrenheit -> F = 1.8C + 32
+        Unicode de Celsius, Fahrenheit e Kelvin
+        Celsis = 2103
+        Fahrenheit = 2109
+        Kelvin = 212A
+        Degree geral = 00B0
+        
+    -->
+    <script>
+        function converter(){
+            const padrao = {
+                style: "decimal",maximumFractionDigits: 3
+            }
+            let celsius = Number(window.prompt('Digite uma temperatura em \u00b0C (Celsius)'))
+            let fahrenheit = 1.8 * celsius + 32
+            let kelvin = celsius + 273
+            let res = document.querySelector('section.res')
+            res.innerHTML = `<h2>A temperatura de ${celsius.toLocaleString('pt-br', padrao)}\u00B0C, corresponde a...</h2>`
+            res.innerHTML += `<p>${kelvin.toLocaleString('pt-br', padrao)}\u00B0K (Kelvin)</p>`
+            res.innerHTML += `<p>${fahrenheit.toLocaleString('pt-br', padrao)}\u00b0F (Fahrenheit)</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Compostas</title>
+    <!-- Estilos -->
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            color: tomato;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.773);
+        }
+        label{
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        input{
+            background-color: rgba(255, 255, 255, 0.992);
+            padding: 10px;
+            border: none;
+            border-bottom: 3px dashed black;
+            border-radius: 3px;
+            
+        }
+        button{
+            background-color: tomato;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.334);
+        }
+            label,input, button{
+                margin-bottom: 10px;
+            }
+        .res{
+            margin-top: 20px;
+            display: block;
+            background-color: tomato;
+            width: fit-content;
+            padding: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirmar Nacionalidade</h1>
+    <label for="">Digite seu país: </label>
+    <input type="text" name="txtCountry" id="txtCountry">
+    <button type="submit" onclick="confirmar()">Confirmar</button>
+    <div class="res"><p>Aqui fica o resultado</p></div>
+
+    <script>
+        function confirmar(){
+            var país = document.querySelector('input#txtCountry').value
+            var res = document.querySelector('div.res')
+            res.innerHTML = `<p>Vivendo em  <strong>${país}</strong>.</p>`
+            if(país == 'Angola' || país == 'angola' || país == 'ANGOLA'){
+                res.innerHTML += `<p>Você é <strong>Angolano(a)!</strong></p>`
+            } else{
+                res.innerHTML += `<p>Você é <strong>Estrangeiro(a)!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
